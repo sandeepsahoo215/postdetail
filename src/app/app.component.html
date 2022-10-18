@@ -1,0 +1,26 @@
+
+<form *ngFor="let p of POSTS | paginate: {itemsPerPage: tablesize,currentPage:page, totalItems:count}; let i= index" class="row form">
+  <div class="col-md-12" style="margin-right: 40px;">
+    <h4>{{p.title}}</h4>
+  </div>
+  <div class="col-md-12" style="margin-right: 40px;">
+    <textarea name="bosy" id="" cols="180" rows="5">{{p.body}}</textarea>
+  </div>
+  <div>
+
+  </div>
+  <div>
+    <div class="col-md-2 inline">User Name</div>
+    <div class="col-md-2 inline">User Email</div>
+    <div class="col-md-2 inline">User Gender</div>
+  </div>
+  
+</form>
+
+<div class="pagination">
+  <pagination-controls previousLabel="prev" nextLabel="next" (pageChange)="formData($event)">
+
+  </pagination-controls>
+</div>
+
+<router-outlet></router-outlet>
